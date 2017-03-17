@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Trip Finder</title>
+  <title>Trip Finder</title>
 
-    <!-- Bootstrap core CSS -->
-<!--     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
- -->
-  </head>
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
 
-  <body>
 
-    <!-- Wrap all page content here -->
-    <div id="wrap">
+</head>
 
-      <!-- Begin page content -->
-      <div class="container">
-        {% block content %}{% endblock %}
-      </div> <!-- end container -->
+<body>
 
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+
+    <nav class="navbar navbar-inverse">
+      <a class="navbar-brand" href="/">Trip Planner</a>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container-fluid">
+      {% block content %}{% endblock %}
+    </div> <!-- end container -->
+
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">Project by Michael Chen and Daniel Fattal</p>
     </div>
+  </div>
 
-    <div id="footer">
-      <div class="container">
-        <p class="text-muted">Project by Michael Chen and Daniel Fattal</p>
-      </div>
-    </div>
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=KEY_HERE&sensor=true"></script>
+  <script src="/js/javascript.js"></script>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<!--     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
- -->  </body>
+</body>
 </html>
