@@ -2,6 +2,25 @@
 
 {% block content %}
 
-WELCOME HOME!
+Hotels:
+<select id="hotel-select">
+	{% for hotel in hotels %} 
+		<option id="hotel_{{hotel.id}}">{{hotel.name}}</option>
+	{% endfor %}
+</select>
+
+Restaurants: 
+<select id="restaurant-select">
+	{% for restaurant in restaurants %} 
+		<option id="restaurant_{{restaurant.id}}">{{restaurant.name}}</option>
+	{% endfor %}	
+</select>
+
+Activites: 
+<select id="activity-select">
+	{% for activity in activites %} 
+		<option id="activity_{{activity.id}}">{{activity.name}}</option>
+	{% endfor %}	
+</select>
 
 {% endblock %}

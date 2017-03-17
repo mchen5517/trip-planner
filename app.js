@@ -23,10 +23,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '/public')));
+app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
+app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/', routes);
 
 
-Promise.all([Place.sync({force: true}), Hotel.sync({force: true}), Activity.sync({force: true}), Restaurant.sync({force: true})])
+Promise.all([Place.sync({force: false}), Hotel.sync({force: false}), Activity.sync({force: false}), Restaurant.sync({force: false})])
 .then(function(results){
 	app.listen('3000', function(){
 		console.log("Listening on port 3000!");

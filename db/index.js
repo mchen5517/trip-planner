@@ -39,7 +39,11 @@ var Hotel = db.define('hotel',
 }, {
 	instanceMethods: {},
 	getterMethods: {},
-	classMethods: {},
+	classMethods: {
+		all: function(){
+			return this.findAll();
+		}
+	},
 	hooks: {}
 }); 
 
@@ -54,7 +58,11 @@ var Activity = db.define('activity',
 }, {
 	instanceMethods: {},
 	getterMethods: {},
-	classMethods: {},
+	classMethods: {
+		all: function(){
+			return this.findAll();
+		}
+	},
 	hooks: {}
 }); 
 
@@ -72,7 +80,11 @@ var Restaurant = db.define('restaurant',
 }, {
 	instanceMethods: {},
 	getterMethods: {},
-	classMethods: {},
+	classMethods: {
+		all: function(){
+			return this.findAll();
+		}
+	},
 	hooks: {}
 }); 
 

@@ -2,11 +2,12 @@
 // The data can then be loaded with the node seed.js
 
 var Promise = require('bluebird');
-const db = require('./db');
-const Place = db.Place;
-const Hotel = db.Hotel;
-const Activity = db.Activity;
-const Restaurant = db.Restaurant;
+const models = require('./db');
+const db = models.db;
+const Place = models.Place;
+const Hotel = models.Hotel;
+const Activity = models.Activity;
+const Restaurant = models.Restaurant;
 
 var data = {
   hotels: [
@@ -62,10 +63,7 @@ var data = {
   ]
 };
 
-Promise.all([Place.sync({force: true}), 
-  Hotel.sync({force: true}), 
-  Activity.sync({force: true}), 
-  Restaurant.sync({force: true})])
+db.sync({force: true})
 .then(function () {
   console.log("Dropped old data, now inserting data");
   const creatingHotels = Promise.map(data.hotels, function (hotel) {
@@ -86,6 +84,6 @@ Promise.all([Place.sync({force: true}),
   console.error('There was totally a problem', err, err.stack);
 })
 .finally(function () {
-  //db.close(); // creates but does not return a promise
+  db.close();
   return null; // stops bluebird from complaining about un-returned promise
 });
